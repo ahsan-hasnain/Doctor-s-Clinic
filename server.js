@@ -5,6 +5,7 @@ const cors = require("cors");
 const appointmentRoutes = require('./routes/appointmentRoutes');
 app.use(express.json())
 app.use(cors())
+const PORT = process.env.PORT || 9002
 
 
 app.use('/api/users', userRoutes); 
@@ -16,6 +17,6 @@ app.get('/api',(req,res)=>{
 })
 
 
-app.listen(3003,()=>{
+app.listen(PORT,()=>{
     console.log('app running');
 })
